@@ -2,6 +2,10 @@ body{
     background-size: cover;
     background-image: url(../img/bg.jpg);
 }
+
+.img {
+    width: 20%;
+}
 h1 {
     color: white;
 }

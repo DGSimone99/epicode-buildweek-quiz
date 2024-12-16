@@ -77,6 +77,20 @@ footer {
     font-size: 1.5em
 }
 
+.countdown-text{
+    border: 1px solid #ebebeb;
+}
+
+
+#rate {
+    background: none;
+    border: solid 0.15em #ebebeb;
+    color: #ebebeb;
+    font-size: 1.2em;
+    padding: 0.7em 3em;
+    text-align: center;
+}
+
 .risposta {
     display: inline-block;
     width: 18em;

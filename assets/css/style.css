@@ -1,14 +1,15 @@
 body{
     background-size: cover;
     background-image: url(../img/bg.jpg);
-    padding: 3% 15%;
+    padding: 2% 15%;
     font-family: "Outfit", sans-serif;
+    color: #ebebeb;
     
 }
 
 .img {
     width: 15%;
-    padding-bottom:2em
+    padding-bottom:2em;
 }
 
 h1 {
@@ -54,4 +55,17 @@ form{
 
 button{
     cursor: pointer;
+}
+
+#pagina2 main, footer{
+    text-align: center;
+}
+
+#rate {
+    background:none;
+    border: solid 0.15em #ebebeb;
+    color:#ebebeb;
+    font-size: 1.2em;
+    padding: 0.7em 3em;
+    text-align: center;
 }

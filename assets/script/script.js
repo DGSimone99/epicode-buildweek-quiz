@@ -158,10 +158,10 @@ if (document.location.pathname === "/quiz.html") {
         clearInterval(countdown);
         if (answer === domandaCorrente.correct_answer) {
           corrette++
-          li.style.color = "green"
+          li.classList.add("corretta")
         } else {
           sbagliate++
-          li.style.color = "red"
+          li.classList.add("sbagliata")
         }
         setTimeout(() => {
           index++

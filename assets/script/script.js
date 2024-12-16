@@ -119,6 +119,22 @@ if (document.location.pathname === "/quiz.html") {
 
   function caricaDomanda() {
 
+    let countdownDuration = 60;
+    const countdownText = document.getElementById("countdown-text");
+
+    let countdown = setInterval(function () {
+    if (countdownDuration > 0) {
+      countdownText.textContent = countdownDuration + "s";
+      countdownDuration--;
+      } else {
+        countdownText.textContent = "0";
+        clearInterval(countdown);
+        sbagliate++
+        index++
+        caricaDomanda()
+      }
+    }, 1000);
+
     const domandaCorrente = questions[index]
     domanda.innerText = domandaCorrente.question
 
@@ -145,9 +161,12 @@ if (document.location.pathname === "/quiz.html") {
           sbagliate++
           li.style.color = "red"
         }
-        index++
-        caricaDomanda()
-      })
+        setTimeout(() => {
+          index++
+          caricaDomanda();
+        }, 1000)
+      }
+    )
     })
   }
   };
@@ -155,15 +174,3 @@ if (document.location.pathname === "/quiz.html") {
 caricaDomanda()
 
 //Countdown Pagina 2 
-let countdownDuration = 55;
-const countdownText = document.getElementById("countdown-text");
-
-let countdown = setInterval(function () {
-  if (countdownDuration > 0) {
-  countdownText.textContent = countdownDuration + "s";
-  countdownDuration--;
-  } else {
-  countdownText.textContent = "Tempo scaduto!";
-  clearInterval(countdown);
-  }
-  }, 1000);

@@ -86,3 +86,12 @@ footer {
     padding: 0.7em 3em;
     text-align: center;
 }
+/*Parte countdown*/
+.countdown-text{
+    border: solid 0.2em #ebebeb;
+    width: 1em;
+    border-radius: 50%;
+    padding: 3%;
+    color: #ebebeb;
+    font-size: 2em;
+}

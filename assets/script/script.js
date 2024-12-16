@@ -115,7 +115,6 @@ if (document.location.pathname === "/quiz.html") {
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
-  const prossimaDomanda = document.querySelector(".prossimaDomanda")
 
   function caricaDomanda() {
 
@@ -169,8 +168,6 @@ if (document.location.pathname === "/quiz.html") {
     )
     })
   }
+  
+  caricaDomanda()
   };
-
-caricaDomanda()
-
-//Countdown Pagina 2 

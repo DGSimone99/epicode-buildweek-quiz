@@ -110,6 +110,8 @@ if (document.location.pathname === "/quiz.html") {
   ];
 
   let index = 0
+  let corrette = 0
+  let sbagliate = 0
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
@@ -137,18 +139,17 @@ if (document.location.pathname === "/quiz.html") {
 
       li.addEventListener("click", () => {
         if (answer === domandaCorrente.correct_answer) {
+          corrette++
           li.style.color = "green"
         } else {
+          sbagliate++
           li.style.color = "red"
         }
+        index++
+        caricaDomanda()
       })
     })
   }
-
-  prossimaDomanda.addEventListener("click", () => {
-    index++
-    caricaDomanda()
-  });
+  };
 
   caricaDomanda()
-}

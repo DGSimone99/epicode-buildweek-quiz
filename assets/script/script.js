@@ -98,19 +98,19 @@ const questions = [
     },
 ];
 
-let index = 0;
+let index = 0
 
-const containerDomanda = document.querySelector(".containerDomanda");
-const domanda = document.querySelector("#domanda");
-const risposte = document.querySelector(".risposte");
-const prossimaDomanda = document.querySelector(".prossimaDomanda");
+const containerDomanda = document.querySelector(".containerDomanda")
+const domanda = document.querySelector("#domanda")
+const risposte = document.querySelector(".risposte")
+const prossimaDomanda = document.querySelector(".prossimaDomanda")
 
 function caricaDomanda() {
 
-    const domandaCorrente = questions[index];
-    domanda.innerText = domandaCorrente.question;
+    const domandaCorrente = questions[index]
+    domanda.innerText = domandaCorrente.question
 
-    risposte.innerHTML = "";
+    risposte.innerHTML = ""
 
     const allAnswers = [
         domandaCorrente.correct_answer,
@@ -118,23 +118,23 @@ function caricaDomanda() {
     ];
 
     allAnswers.forEach((answer) => {
-        const li = document.createElement("li");
-        li.textContent = answer;
-        risposte.appendChild(li);
+        const li = document.createElement("li")
+        li.textContent = answer
+        risposte.appendChild(li)
 
         li.addEventListener("click", () => {
             if (answer === domandaCorrente.correct_answer) {
-                li.style.color = "green";
+                li.style.color = "green"
             } else {
-                li.style.color = "red";
+                li.style.color = "red"
             }
-        });
-    });
+        })
+    })
 }
 
 prossimaDomanda.addEventListener("click", () => {
-    index++;
-    caricaDomanda();
+    index++
+    caricaDomanda()
 });
 
-caricaDomanda();
+caricaDomanda()

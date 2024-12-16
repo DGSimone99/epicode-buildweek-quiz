@@ -120,7 +120,7 @@ if (document.location.pathname === "/quiz.html") {
   function caricaDomanda() {
 
     let countdownDuration = 60;
-    const countdownText = document.getElementById("countdown-text");
+    const countdownText = document.querySelector("#countdown-text");
 
     let countdown = setInterval(function () {
     if (countdownDuration > 0) {

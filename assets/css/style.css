@@ -77,6 +77,10 @@ footer {
     font-size: 1.5em
 }
 
+.countdown-text{
+    border: 1px solid #ebebeb;
+}
+
 
 #rate {
     background: none;

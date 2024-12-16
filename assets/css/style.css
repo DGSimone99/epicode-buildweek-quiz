@@ -78,11 +78,13 @@ footer {
 }
 
 .countdown-text{
-    border: 1px solid #ebebeb;
+    border: 10px solid #ebebeb;
     border-radius: 50%;
-    padding: 1.7em;
+    padding: 1.2em;
     width: 1.5em;
-    font-size: x-large;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 

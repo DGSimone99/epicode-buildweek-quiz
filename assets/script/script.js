@@ -8,6 +8,10 @@ if (document.location.pathname === "/index.html") {
   })
 }
 
+let index = 0
+let corrette = 0
+let sbagliate = 0
+
 if (document.location.pathname === "/quiz.html") {
   const questions = [
     {
@@ -108,10 +112,6 @@ if (document.location.pathname === "/quiz.html") {
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
   ];
-
-  let index = 0
-  let corrette = 0
-  let sbagliate = 0
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")

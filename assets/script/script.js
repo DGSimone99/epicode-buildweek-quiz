@@ -1,5 +1,4 @@
-let pagina1 = document.querySelector("#pagina1")
-if (pagina1) {
+if (document.location.pathname === "/index.html") {
   let test = document.querySelector("#nextPage")
   test.addEventListener("click", () => {
     let check = document.querySelector(".check")
@@ -9,8 +8,9 @@ if (pagina1) {
   })
 }
 
-let pagina2 = document.querySelector("#pagina2")
-if (pagina2) {
+console.dir(document)
+
+if (document.location.pathname === "/quiz.html") {
   const questions = [
     {
       category: "Science: Computers",
@@ -131,6 +131,7 @@ if (pagina2) {
 
     allAnswers.forEach((answer) => {
       const li = document.createElement("li")
+      li.className = "risposta"
       li.textContent = answer
       risposte.appendChild(li)
 

@@ -66,7 +66,7 @@ footer {
 }
 
 #pagina2 h2 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin: auto;
     padding-top: 1.5em;
     font-weight: 500;
@@ -75,16 +75,6 @@ footer {
 #pagina2 p {
     margin-top: 0;
     font-size: 1.5em
-}
-
-
-#rate {
-    background: none;
-    border: solid 0.15em #ebebeb;
-    color: #ebebeb;
-    font-size: 1.2em;
-    padding: 0.7em 3em;
-    text-align: center;
 }
 
 .risposta {
@@ -104,13 +94,11 @@ footer {
     text-align: right;
 }
 
-.prossimaDomanda{
-    font-size: 2em;
-    border-radius: 50%;
-    font-weight: bold;
+#rate {
+    background: none;
+    border: solid 0.15em #ebebeb;
     color: #ebebeb;
-    background-color: rgba(45, 74, 100, 0.37);
-    border:#ebebeb solid 0.06em;
-    padding: 0.5em;
+    font-size: 1.2em;
+    padding: 0.7em 3em;
+    text-align: center;
 }
-

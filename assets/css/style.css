@@ -54,6 +54,7 @@ ul {
     padding-top: 2.5%;
     line-height: 1.7em;
     list-style: none;
+    height: 20em;
 }
 
 #pagina1 form {
@@ -128,13 +129,18 @@ footer {
     text-align: center;
 }
 
-
 .corretta {
     color:red
 }
 
 .sbagliata {
-    color:green
+    color:blue
+}
+
+#contatore{
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
 }
 
 /* PAGINA 3*/

@@ -1,18 +1,20 @@
 body{
     background-size: cover;
     background-image: url(../img/bg.jpg);
+    padding: 10em 10em;
 }
 
 .img {
     width: 20%;
 }
 h1 {
-    color: white;
+    color: #ebebeb;
 }
 h2 {
     color: #d20094;
 }
 
 main{
-    color: white;
+    color: #ebebeb
+    ;
 }

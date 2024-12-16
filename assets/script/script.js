@@ -129,6 +129,8 @@ if (document.location.pathname === "/quiz.html") {
       ...domandaCorrente.incorrect_answers,
     ];
 
+    allAnswers.sort(()=> Math.random()-0.5)
+
     allAnswers.forEach((answer) => {
       const li = document.createElement("li")
       li.className = "risposta"

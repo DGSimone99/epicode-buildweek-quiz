@@ -86,12 +86,31 @@ footer {
     padding: 0.7em 3em;
     text-align: center;
 }
-/*Parte countdown*/
-.countdown-text{
-    border: solid 0.2em #ebebeb;
-    width: 1em;
-    border-radius: 50%;
-    padding: 3%;
-    color: #ebebeb;
-    font-size: 2em;
+
+.risposta {
+    display: inline-block;
+    width: 18em;
+    padding: 1.5em 2em;
+    margin: 1em;
+    background-color: rgba(45, 74, 100, 0.37);
+    border:#ebebeb solid 0.2em;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
 }
+
+#nextQuestion {
+    text-align: right;
+}
+
+.prossimaDomanda{
+    font-size: 2em;
+    border-radius: 50%;
+    font-weight: bold;
+    color: #ebebeb;
+    background-color: rgba(45, 74, 100, 0.37);
+    border:#ebebeb solid 0.06em;
+    padding: 0.5em;
+}
+

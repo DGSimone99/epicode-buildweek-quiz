@@ -53,6 +53,7 @@ main {
 ul {
     padding-top: 2.5%;
     line-height: 1.7em;
+    list-style: none;
 }
 
 #pagina1 form {

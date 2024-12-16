@@ -115,6 +115,7 @@ if (document.location.pathname === "/quiz.html") {
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
+  const contatore = document.querySelector("#contatore")
 
   function caricaDomanda() {
     
@@ -136,6 +137,7 @@ if (document.location.pathname === "/quiz.html") {
 
     const domandaCorrente = questions[index]
     domanda.innerText = domandaCorrente.question
+    contatore.textContent = `Question ${index + 1} / 10`
 
     risposte.innerHTML = ""
 

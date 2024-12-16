@@ -1,4 +1,17 @@
-const questions = [
+let pagina1 = document.querySelector("#pagina1")
+if (pagina1) {
+  let test = document.querySelector("#nextPage")
+  test.addEventListener("click", () => {
+    let check = document.querySelector(".check")
+    if (check.checked) {
+      window.location.href = "quiz.html"
+    }
+  })
+}
+
+let pagina2 = document.querySelector("#pagina2")
+if (pagina2) {
+  const questions = [
     {
       category: "Science: Computers",
       type: "multiple",
@@ -96,16 +109,16 @@ const questions = [
       correct_answer: "Java",
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
-];
+  ];
 
-let index = 0
+  let index = 0
 
-const containerDomanda = document.querySelector(".containerDomanda")
-const domanda = document.querySelector("#domanda")
-const risposte = document.querySelector(".risposte")
-const prossimaDomanda = document.querySelector(".prossimaDomanda")
+  const containerDomanda = document.querySelector(".containerDomanda")
+  const domanda = document.querySelector("#domanda")
+  const risposte = document.querySelector(".risposte")
+  const prossimaDomanda = document.querySelector(".prossimaDomanda")
 
-function caricaDomanda() {
+  function caricaDomanda() {
 
     const domandaCorrente = questions[index]
     domanda.innerText = domandaCorrente.question
@@ -113,28 +126,29 @@ function caricaDomanda() {
     risposte.innerHTML = ""
 
     const allAnswers = [
-        domandaCorrente.correct_answer,
-        ...domandaCorrente.incorrect_answers,
+      domandaCorrente.correct_answer,
+      ...domandaCorrente.incorrect_answers,
     ];
 
     allAnswers.forEach((answer) => {
-        const li = document.createElement("li")
-        li.textContent = answer
-        risposte.appendChild(li)
+      const li = document.createElement("li")
+      li.textContent = answer
+      risposte.appendChild(li)
 
-        li.addEventListener("click", () => {
-            if (answer === domandaCorrente.correct_answer) {
-                li.style.color = "green"
-            } else {
-                li.style.color = "red"
-            }
-        })
+      li.addEventListener("click", () => {
+        if (answer === domandaCorrente.correct_answer) {
+          li.style.color = "green"
+        } else {
+          li.style.color = "red"
+        }
+      })
     })
-}
+  }
 
-prossimaDomanda.addEventListener("click", () => {
+  prossimaDomanda.addEventListener("click", () => {
     index++
     caricaDomanda()
-});
+  });
 
-caricaDomanda()
+  caricaDomanda()
+}

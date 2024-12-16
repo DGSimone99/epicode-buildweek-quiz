@@ -1,15 +1,15 @@
-body{
+body {
     background-size: cover;
     background-image: url(../img/bg.jpg);
     padding: 2% 15%;
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
-    
+
 }
 
 .img {
     width: 15%;
-    padding-bottom:2em;
+    padding-bottom: 2em;
 }
 
 h1 {
@@ -27,13 +27,18 @@ h3 {
     padding-bottom: 0em;
 }
 
-main{
-    color: #ebebeb
-    ;
+main {
+    color: #ebebeb;
 }
 
-#index button{
-    text-align:right;
+
+#proceed {
+    float: right;
+}
+
+
+#nextPage {
+    text-align: right;
     font-size: 1.2em;
     color: #0B113B;
     background-color: #00FFFF;
@@ -44,39 +49,42 @@ main{
     margin-left: 30%
 }
 
-ul{
+ul {
     padding-top: 2.5%;
     line-height: 1.7em;
 }
 
-form{
+form {
     padding-top: 4%;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
-#pagina2 main, footer{
+#pagina2 main,
+footer {
     text-align: center;
 }
 
-#pagina2 h2{
+#pagina2 h2 {
     font-size: 3em;
     padding: 0;
     margin: 0;
-    
+
 }
 
-#pagina2 p{
+#pagina2 p {
     margin-top: 0;
     font-size: 1.5em
 }
 
+
+
 #rate {
-    background:none;
+    background: none;
     border: solid 0.15em #ebebeb;
-    color:#ebebeb;
+    color: #ebebeb;
     font-size: 1.2em;
     padding: 0.7em 3em;
     text-align: center;

@@ -1,6 +1,4 @@
 Simone Di Giorgio
-<<<<<<< HEAD
-Cosimo Pastore
-=======
 Rosario Faro
->>>>>>> 047bbf31963f9030127e976f5d0d67a288362a24
+Cosimo Pastore
+

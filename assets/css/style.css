@@ -1,16 +1,18 @@
 body{
     background-size: cover;
     background-image: url(../img/bg.jpg);
-    padding: 10em 10em;
+    padding-left: 10em;
     font-family: "Outfit", sans-serif;
 }
 
 .img {
     width: 20%;
-    padding-bottom: 5em;
+    padding-top: 2em;
 }
 h1 {
     color: #ebebeb;
+    font-size: 65px;
+
 }
 h3 {
     color: #d20094;

@@ -118,14 +118,14 @@ if (document.location.pathname === "/quiz.html") {
   const contatore = document.querySelector("#contatore")
 
   function caricaDomanda() {
-    
+
     let countdownDuration = 60;
     const countdownText = document.querySelector("#countdown-text");
 
     let countdown = setInterval(function () {
-    if (countdownDuration > 0) {
-      countdownText.textContent = countdownDuration + "s";
-      countdownDuration--;
+      if (countdownDuration > 0) {
+        countdownText.textContent = countdownDuration + "s";
+        countdownDuration--;
       } else {
         countdownText.textContent = "0";
         clearInterval(countdown);
@@ -146,7 +146,7 @@ if (document.location.pathname === "/quiz.html") {
       ...domandaCorrente.incorrect_answers,
     ];
 
-    allAnswers.sort(()=> Math.random()-0.5)
+    allAnswers.sort(() => Math.random() - 0.5)
 
     allAnswers.forEach((answer) => {
       const li = document.createElement("li")
@@ -168,9 +168,9 @@ if (document.location.pathname === "/quiz.html") {
           caricaDomanda();
         }, 1000)
       }
-    )
+      )
     })
   }
-  
+
   caricaDomanda()
-  };
+};

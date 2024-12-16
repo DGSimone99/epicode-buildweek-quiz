@@ -78,13 +78,13 @@ footer {
     font-size: 1.5em
 }
 
-.countdown-container{
+.countdown-container {
     display: inline-block;
     float: right;
     text-align: center;
 }
 
-.countdown-text{
+.countdown-text {
     border: 10px solid #ebebeb;
     border-radius: 50%;
     padding: 1.2em;
@@ -109,7 +109,7 @@ footer {
     padding: 1.5em 2em;
     margin: 1em;
     background-color: rgba(45, 74, 100, 0.37);
-    border:#ebebeb solid 0.2em;
+    border: #ebebeb solid 0.2em;
     border-radius: 100px;
     font-weight: bold;
     font-size: 1em;
@@ -130,31 +130,34 @@ footer {
 }
 
 .corretta {
-    color:red
+    color: red
 }
 
 .sbagliata {
-    color:blue
+    color: blue
 }
 
-#contatore{
+#contatore {
     margin: auto;
     text-align: center;
     font-size: 1.5em;
+    margin-bottom: 0;
+    padding-bottom: 0
 }
 
 /* PAGINA 3*/
-.risultatoFinale{
+.risultatoFinale {
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
     text-align: center;
 }
-h2{
+
+h2 {
     font-size: 2.5em;
     margin-bottom: 0;
 }
 
-.risultatoFinale > p{
+.risultatoFinale>p {
     margin-top: 0;
     font-size: 1.2em;
 }

@@ -16,6 +16,9 @@ h1 {
 }
 h3 {
     color: #d20094;
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 main{
@@ -24,6 +27,7 @@ main{
 }
 #index button{
     text-align:right;
+    font-size: 1.2em;
     color: #0B113B;
     background-color: #00FFFF;
     box-shadow: 2px -1px 39px -5px #00FFFF;
@@ -31,4 +35,11 @@ main{
     font-weight: bold;
     padding: 1em 3em;
     margin-left: 5em;
+}
+
+ul{
+    padding-top: 5%;
+}
+form{
+    padding-top: 5%;
 }

@@ -117,7 +117,7 @@ if (document.location.pathname === "/quiz.html") {
   const risposte = document.querySelector(".risposte")
 
   function caricaDomanda() {
-
+    
     let countdownDuration = 60;
     const countdownText = document.querySelector("#countdown-text");
 
@@ -153,6 +153,7 @@ if (document.location.pathname === "/quiz.html") {
       risposte.appendChild(li)
 
       li.addEventListener("click", () => {
+        clearInterval(countdown);
         if (answer === domandaCorrente.correct_answer) {
           corrette++
           li.style.color = "green"

@@ -59,17 +59,6 @@ ul {
     padding-top: 4%;
 }
 
-.custom-checkbox input[type="checkbox"] {
-    display: none;
-  }
-
-.check::before {
-    border: 0.2em solid #ebebeb;
-    background-color: transparent;
-}
-
-
-
 #pagina2 main,
 footer {
     text-align: center;

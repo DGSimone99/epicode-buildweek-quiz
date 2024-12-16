@@ -137,7 +137,7 @@ if (document.location.pathname === "/quiz.html") {
 
     const domandaCorrente = questions[index]
     domanda.innerText = domandaCorrente.question
-    contatore.textContent = `Question ${index + 1} / 10`
+    contatore.textContent = `Question ${index + 1} <span class="totDomande">/ ${questions.length}</span>`
 
     risposte.innerHTML = ""
 

@@ -8,8 +8,6 @@ if (document.location.pathname === "/index.html") {
   })
 }
 
-console.dir(document)
-
 if (document.location.pathname === "/quiz.html") {
   const questions = [
     {

@@ -152,4 +152,18 @@ if (document.location.pathname === "/quiz.html") {
   }
   };
 
-  caricaDomanda()
+caricaDomanda()
+
+//Countdown Pagina 2 
+let countdownDuration = 55;
+const countdownText = document.getElementById("countdown-text");
+
+let countdown = setInterval(function () {
+  if (countdownDuration > 0) {
+  countdownText.textContent = countdownDuration + "s";
+  countdownDuration--;
+  } else {
+  countdownText.textContent = "Tempo scaduto!";
+  clearInterval(countdown);
+  }
+  }, 1000);

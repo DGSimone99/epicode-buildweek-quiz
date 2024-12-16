@@ -61,6 +61,8 @@ ul {
     padding-top: 4%;
 }
 
+/* PAGINA 2*/
+
 #pagina2 main,
 footer {
     text-align: center;
@@ -143,6 +145,10 @@ footer {
     font-size: 1.5em;
     margin-bottom: 0;
     padding-bottom: 0
+}
+
+.totDomande {
+    color: #d20094;
 }
 
 /* PAGINA 3*/

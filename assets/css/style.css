@@ -46,7 +46,8 @@ main {
     border: none;
     font-weight: bold;
     padding: 1em 3em;
-    margin-left: 30%
+    margin-left: 30%;
+    cursor: pointer;
 }
 
 ul {
@@ -54,13 +55,20 @@ ul {
     line-height: 1.7em;
 }
 
-form {
+#pagina1 form {
     padding-top: 4%;
 }
 
-button {
-    cursor: pointer;
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+
+.check::before {
+    border: 0.2em solid #ebebeb;
+    background-color: transparent;
 }
+
+
 
 #pagina2 main,
 footer {
@@ -69,16 +77,15 @@ footer {
 
 #pagina2 h2 {
     font-size: 3em;
-    padding: 0;
-    margin: 0;
-
+    margin: auto;
+    padding-top: 1.5em;
+    font-weight: 500;
 }
 
 #pagina2 p {
     margin-top: 0;
     font-size: 1.5em
 }
-
 
 
 #rate {

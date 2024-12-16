@@ -113,7 +113,6 @@ if (pagina2) {
 
   let index = 0
 
-  const containerDomanda = document.querySelector(".containerDomanda")
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
   const prossimaDomanda = document.querySelector(".prossimaDomanda")

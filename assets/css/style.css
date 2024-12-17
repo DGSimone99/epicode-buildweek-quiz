@@ -310,3 +310,8 @@ h2 {
 .starClicked {
     fill: #00FFFF;
 }
+
+#starButton .star {
+    width: 2em;
+    height: 2em;
+}

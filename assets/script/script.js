@@ -11,6 +11,7 @@ if (document.location.pathname === "/index.html") {
 let index = 0
 let corrette = 0
 let sbagliate = 0
+let totale = 0
 
 if (document.location.pathname === "/quiz.html") {
   const questions = [
@@ -135,6 +136,11 @@ if (document.location.pathname === "/quiz.html") {
       }
     }, 1000);
 
+    if (index >= questions.length) {
+      window.location.href = "result.html";
+      return;
+    }
+
     const domandaCorrente = questions[index]
     domanda.innerText = domandaCorrente.question
     contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${questions.length}</span>`
@@ -158,9 +164,11 @@ if (document.location.pathname === "/quiz.html") {
         clearInterval(countdown);
         if (answer === domandaCorrente.correct_answer) {
           corrette++
+          localStorage.setItem("risposteCorrette", corrette)
           li.classList.add("corretta")
         } else {
           sbagliate++
+          localStorage.setItem("risposteSbagliate", sbagliate)
           li.classList.add("sbagliata")
         }
         setTimeout(() => {
@@ -169,8 +177,20 @@ if (document.location.pathname === "/quiz.html") {
         }, 1000)
       }
       )
-    })
+    }
+    
+  )
+  
   }
 
   caricaDomanda()
 };
+
+
+if (document.location.pathname === "/result.html") {
+  let result = document.querySelector("#corrette")
+  let corrette2 = localStorage.getItem("risposteCorrette")
+  result.innerText = corrette2
+}
+
+

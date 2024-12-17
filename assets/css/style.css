@@ -58,8 +58,14 @@ ul {
 }
 
 #pagina1 form {
-    padding-top: 13%;
+    padding-top: 9%;
 }
+
+/*.check{
+    cursor: pointer;
+    background-color: #0B113B;
+    background-size: cover;
+}*/
 
 /* PAGINA 2*/
 

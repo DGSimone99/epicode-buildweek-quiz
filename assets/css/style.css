@@ -52,12 +52,19 @@ main {
 
 ul {
     padding-top: 2.5%;
+    padding-left: 3%;
     line-height: 1.7em;
-    list-style: none;
+    height: 2em;
 }
 
 #pagina1 form {
-    padding-top: 4%;
+    padding-top: 9%;
+}
+
+.check{
+    cursor: pointer;
+    /*background-color: #0B113B;
+    background-size: cover;*/
 }
 
 /* PAGINA 2*/

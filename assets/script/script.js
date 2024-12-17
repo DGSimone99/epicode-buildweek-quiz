@@ -163,11 +163,11 @@ if (document.location.pathname === "/quiz.html") {
       risposte.appendChild(li)
 
       li.addEventListener("click", () => {
-        
+
         if (document.querySelector(".risposta.cliccata")) return
 
         li.classList.add("cliccata")
-        
+
         clearInterval(countdown);
         if (answer === domandaCorrente.correct_answer) {
           corrette++
@@ -195,7 +195,7 @@ if (document.location.pathname === "/quiz.html") {
 
 
 if (document.location.pathname === "/result.html") {
-//Risoste corrette
+  //Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")
   corrette.className = "corretteP"
@@ -205,14 +205,14 @@ if (document.location.pathname === "/result.html") {
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
   corrette.innerText = (corrette2 / questions.length * 100) + "%"
-//Contatore corrette
+  //Contatore corrette
   let contatoreGiuste = document.createElement("p")
   contatoreGiuste.className = "contatoreGiuste"
   corretteDiv.appendChild(contatoreGiuste)
   contatoreGiuste.innerText = corrette2 + "/" + questions.length + " questions"
 
 
-//Risoste sbagliate
+  //Risoste sbagliate
   let sbagliateDiv = document.querySelector("#sbagliate")
   let sbagliate = document.createElement("p")
   sbagliate.className = "sbagliateP"
@@ -223,7 +223,7 @@ if (document.location.pathname === "/result.html") {
   sbagliateDiv.className = "sbagliateDiv"
   sbagliate.innerText = (sbagliate2 / questions.length * 100) + "%"
 
-//Contatore sbagliate
+  //Contatore sbagliate
   let contatoreSbagliate = document.createElement("p")
   contatoreSbagliate.className = "contatoreSbagliate"
   sbagliateDiv.appendChild(contatoreSbagliate)
@@ -256,8 +256,8 @@ if (document.location.pathname === "/result.html") {
   }
 
 
-let rate = document.querySelector("#rate")
+  let rate = document.querySelector("#rate")
   rate.addEventListener("click", () => {
     window.location.href = "review.html"
-})
+  })
 }

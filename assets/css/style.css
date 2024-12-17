@@ -161,6 +161,14 @@ footer {
 }
 
 /* PAGINA 3*/
+#pagina3 {
+    padding: 0;
+}
+
+#pagina3 header {
+    padding: 2% 15% 0% 15%;
+}
+
 .risultatoFinale {
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
@@ -175,4 +183,51 @@ h2 {
 .risultatoFinale>p {
     margin-top: 0;
     font-size: 1.2em;
+}
+
+.container div{
+    display: inline-block;
+    text-align: left;
+    padding-top: 1em;
+}
+
+#sbagliate, #corrette {
+    font-size: 3em;
+    margin: 0em;
+    line-height: 0.2em;
+}
+
+.contatoreGiuste, .contatoreSbagliate {
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.corretteP, .sbagliateP {
+    font-weight: bolder;
+}
+
+#risultato {
+    width: 20%;
+    padding: 0em 0em 7em 0em;
+    margin: 1em 4em;
+    text-align: center;
+    font-size: 1.2em;
+    border: #00FFFF;
+    border: solid 2.5em white;
+    border-radius: 50%;
+
+}
+
+.infoTesto {
+    font-size: 0.6em;
+    width: 50%;
+    margin: auto;
+}
+
+.testo {
+    font-weight: bold;
+}
+
+.testo span {
+    color: #00FFFF;
 }

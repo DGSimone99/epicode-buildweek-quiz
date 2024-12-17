@@ -187,6 +187,7 @@ if (document.location.pathname === "/quiz.html") {
 
 
 if (document.location.pathname === "/result.html") {
+//Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")
   corrette.className = "corretteP"
@@ -196,21 +197,27 @@ if (document.location.pathname === "/result.html") {
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
   corrette.innerText = (corrette2 / questions.length * 100) + "%"
-
+//Contatore corrette
   let contatoreGiuste = document.createElement("p")
   contatoreGiuste.className = "contatoreGiuste"
   corretteDiv.appendChild(contatoreGiuste)
   contatoreGiuste.innerText = corrette2 + "/" + questions.length + " questions"
 
 
-
+//Risoste sbagliate
   let sbagliateDiv = document.querySelector("#sbagliate")
   let sbagliate = document.createElement("p")
+  sbagliate.className = "sbagliateP"
+
   let sbagliate2 = localStorage.getItem("risposteSbagliate")
+
   sbagliateDiv.appendChild(sbagliate)
+  sbagliateDiv.className = "sbagliateDiv"
   sbagliate.innerText = (sbagliate2 / questions.length * 100) + "%"
 
+//Contatore sbagliate
   let contatoreSbagliate = document.createElement("p")
+  contatoreSbagliate.className = "contatoreSbagliate"
   sbagliateDiv.appendChild(contatoreSbagliate)
   contatoreSbagliate.innerText = sbagliate2 + "/" + questions.length + " questions"
 
@@ -220,13 +227,17 @@ if (document.location.pathname === "/result.html") {
 
   let superato = document.createElement("p")
   let info = document.createElement("p")
-  superato.innerHTML = `Congratulations! <span class="superato">You passed the exam.</span>`
-  info.innerText = "We'll send you the certificate in few minutes. Check your email (including promotions / Spam folder)"
+  superato.innerHTML = `Congratulations!<br><span class="superato">You passed the exam.</span>`
+  superato.className = "testo"
+  info.innerHTML = "We'll send you the certificate in few minutes.<br>Check your email (including promotions / Spam folder)"
+  info.className = "infoTesto"
 
   let nonSuperato = document.createElement("p")
   let info2 = document.createElement("p")
-  nonSuperato.innerHTML = `Congratulations! <span class="superato">You didn't pass the exam.</span>`
-  info2.innerText = "We'll not send you the certificate in few minutes. Don't check your email (including promotions / Spam folder)"
+  nonSuperato.innerHTML = `Congratulations!<br><span class="superato">You didn't pass the exam.</span>`
+  nonSuperato.className = "testo"
+  info2.innerHTML = "We'll not send you the certificate in few minutes.<br>Don't check your email (including promotions / Spam folder)"
+  info2.className = "infoTesto"
 
   if (contatoreGiuste.innerText >= "60%") {
     risultato.appendChild(superato)

@@ -254,4 +254,10 @@ if (document.location.pathname === "/result.html") {
     risultato.appendChild(nonSuperato)
     risultato.appendChild(info2)
   }
+
+
+let rate = document.querySelector("#rate")
+  rate.addEventListener("click", () => {
+    window.location.href = "review.html"
+})
 }

@@ -197,13 +197,19 @@ if (document.location.pathname === "/quiz.html") {
 if (document.location.pathname === "/result.html") {
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")
+  corrette.className = "corretteP"
+
   let corrette2 = localStorage.getItem("risposteCorrette")
+
   corretteDiv.appendChild(corrette)
+  corretteDiv.className = "corretteDiv"
   corrette.innerText = (corrette2 / questions.length * 100) + "%"
 
   let contatoreGiuste = document.createElement("p")
+  contatoreGiuste.className = "contatoreGiuste"
   corretteDiv.appendChild(contatoreGiuste)
   contatoreGiuste.innerText = corrette2 + "/" + questions.length + " questions"
+
 
 
   let sbagliateDiv = document.querySelector("#sbagliate")

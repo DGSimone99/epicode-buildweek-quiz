@@ -61,7 +61,7 @@ ul {
     padding-top: 9%;
 }
 
-.check{
+.check {
     cursor: pointer;
     /*background-color: #0B113B;
     background-size: cover;*/
@@ -134,26 +134,23 @@ footer {
     cursor: pointer;
 }
 
+.risposta:hover {
+    background-color: #0B113B;
+}
+
 #nextQuestion {
     text-align: right;
 }
 
-#rate {
-    background: none;
-    border: solid 0.15em #ebebeb;
-    color: #ebebeb;
-    font-size: 1.2em;
-    padding: 0.7em 3em;
-    text-align: center;
-}
-
 .corretta {
-    color: red
+    background: radial-gradient(ellipse at center, rgba(16, 151, 175, 1) 0%, rgba(16, 151, 175, 1) 34%, rgba(8, 98, 128, 1) 100%);
 }
 
 .sbagliata {
-    color: blue
+    background: radial-gradient(ellipse at center, rgba(210, 0, 148, 1) 0%, rgba(210, 0, 148, 1) 34%, rgb(141, 0, 101) 100%);
 }
+
+
 
 #contatore {
     margin: auto;
@@ -161,7 +158,7 @@ footer {
     font-size: 1.5em;
     margin-bottom: 0;
     padding-bottom: 0;
-    position:fixed;
+    position: fixed;
     left: 45vw;
     bottom: 1vw
 }
@@ -171,6 +168,14 @@ footer {
 }
 
 /* PAGINA 3*/
+#pagina3 {
+    padding: 0;
+}
+
+#pagina3 header {
+    padding: 2% 15% 0% 15%;
+}
+
 .risultatoFinale {
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
@@ -185,4 +190,138 @@ h2 {
 .risultatoFinale>p {
     margin-top: 0;
     font-size: 1.2em;
+}
+
+.container div {
+    display: inline-block;
+    text-align: left;
+    padding-top: 1em;
+}
+
+#sbagliate,
+#corrette {
+    font-size: 3em;
+    margin: 0em;
+    line-height: 0.2em;
+}
+
+.contatoreGiuste,
+.contatoreSbagliate {
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.corretteP,
+.sbagliateP {
+    font-weight: bolder;
+}
+
+#risultato {
+    width: 12em;
+    height: 12em;
+    margin: 1em 4em;
+    text-align: center;
+    font-size: 1.2em;
+    border: solid 2.5em #d20094;
+    border-radius: 50%;
+}
+
+.infoTesto {
+    font-size: 0.6em;
+    width: 80%;
+    margin: auto;
+}
+
+.testo {
+    font-weight: bold;
+}
+
+.testo span {
+    color: #00FFFF;
+}
+
+#rate {
+    background: none;
+    border: solid 0.15em #ebebeb;
+    color: #ebebeb;
+    font-size: 1.2em;
+    padding: 0.7em 3em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Pagina 4 */
+#pagina4 main {
+    width: 80%;
+    margin: auto;
+}
+
+#pagina4 h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#pagina4 p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5em;
+}
+
+#pagina4 form textarea {
+    width: 100%;
+    border-bottom: 1px solid #d20094;
+    background: transparent;
+    resize: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: white;
+    padding: 0.3em 1.8em;
+    font-size: 0.8em;
+    font-family: sans-serif;
+}
+
+#pagina4 textarea:focus {
+    outline: none;
+}
+
+.star {
+    background: transparent;
+    border: none;
+    padding: 0.1em;
+}
+
+#starButton {
+    text-align: center;
+    margin-bottom: 4rem;
+    border: none;
+    cursor: pointer;
+}
+
+#info {
+    text-align: center;
+    font-size: 1.2em;
+    color: #0B113B;
+    background-color: #00FFFF;
+    box-shadow: 2px -1px 39px -5px #00FFFF;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 1em 3em;
+}
+
+#pagina4 section {
+    text-align: center;
+    margin: 3rem;
+}
+
+.starClicked {
+    fill: #00FFFF;
+}
+
+#starButton .star {
+    width: 2em;
+    height: 2em;
 }

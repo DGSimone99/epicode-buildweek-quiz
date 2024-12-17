@@ -25,11 +25,9 @@ form textarea {
     font-size: 0.8em;
     font-family: sans-serif ;
 }
-
-textarea::active {
-    border: none;
+textarea:focus {
+    outline: none;
 }
-
 .star {
     background: transparent;
     border: none;

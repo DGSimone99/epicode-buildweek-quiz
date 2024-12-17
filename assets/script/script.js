@@ -163,6 +163,11 @@ if (document.location.pathname === "/quiz.html") {
       risposte.appendChild(li)
 
       li.addEventListener("click", () => {
+        
+        if (document.querySelector(".risposta.cliccata")) return
+
+        li.classList.add("cliccata")
+        
         clearInterval(countdown);
         if (answer === domandaCorrente.correct_answer) {
           corrette++
@@ -173,6 +178,9 @@ if (document.location.pathname === "/quiz.html") {
           localStorage.setItem("risposteSbagliate", sbagliate)
           li.classList.add("sbagliata")
         }
+        document.querySelectorAll(".risposta").forEach((item) => {
+          item.classList.add("disabled")
+        })
         setTimeout(() => {
           index++
           caricaDomanda();
@@ -247,5 +255,3 @@ if (document.location.pathname === "/result.html") {
     risultato.appendChild(info2)
   }
 }
-
-

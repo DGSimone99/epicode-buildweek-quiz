@@ -120,7 +120,7 @@ let questions2 = [
     type: "boolean",
     difficulty: "hard",
     question: "The logo for Snapchat is a Bell.",
-    correct_answer: "False", 
+    correct_answer: "False",
     incorrect_answers: ["True"]
   },
   {
@@ -211,33 +211,33 @@ let questions2 = [
 
 if (document.location.pathname === "/select.html") {
   let start = document.querySelector("#startTest")
-  
+
   start.addEventListener("click", () => {
     let questions = document.querySelector("#numberQuestions")
     let numbQuestions = questions.value;
-    
+
     localStorage.setItem("numQuestions", numbQuestions);
 
     let difficulty = document.querySelector("#difficulty")
-    let selectedQuestions = []
 
     let difficultyN = 0
 
     let selectedValue = difficulty.value
 
     if (selectedValue === "easy") {
-        difficultyN = 0
-      } else {
-        difficultyN = 1
-      }  
+      difficultyN = 0
+    } else {
+      difficultyN = 1
+    }
     localStorage.setItem("difficulty", difficultyN)
 
-    window.location.href = "/quiz.html"}
-)
+    window.location.href = "/quiz.html"
+  }
+  )
 }
 
 
-  
+
 
 if (document.location.pathname === "/quiz.html") {
 
@@ -247,7 +247,7 @@ if (document.location.pathname === "/quiz.html") {
   if (difficulty !== 0) {
     questions = questions2
   }
-  
+
   let selectedNum = localStorage.getItem("numQuestions");
   let selectedQuestions = questions.slice(0, selectedNum)
 
@@ -257,14 +257,14 @@ if (document.location.pathname === "/quiz.html") {
   const contatore = document.querySelector("#contatore")
 
   function caricaDomanda() {
-    
+
     function circleAnimation() {
       let circleForeground = document.querySelector(".circle-foreground");
-        circleForeground.style.animation = "none";
-        circleForeground.style.strokeDashoffset = "0";
-        setTimeout(() => {
-          circleForeground.style.animation = "countdown 60s linear forwards";
-        }, 1000);
+      circleForeground.style.animation = "none";
+      circleForeground.style.strokeDashoffset = "0";
+      setTimeout(() => {
+        circleForeground.style.animation = "countdown 60s linear forwards";
+      }, 1000);
     }
 
     let countdownDuration = 59;
@@ -286,7 +286,7 @@ if (document.location.pathname === "/quiz.html") {
       }
     }, 1000);
 
-  
+
     if (index >= selectedQuestions.length) {
       window.location.href = "result.html";
       return;
@@ -313,11 +313,11 @@ if (document.location.pathname === "/quiz.html") {
 
       li.addEventListener("click", () => {
         clearInterval(countdown);
-  
+
         let timerDisplay = document.querySelector("#countdown-text");
 
         if (timerDisplay) {
-            timerDisplay.textContent = "60";
+          timerDisplay.textContent = "60";
           if (document.querySelector(".risposta.cliccata")) return
         }
 
@@ -473,16 +473,16 @@ if (document.location.pathname === "/review.html") {
 
 const allStars = document.querySelectorAll(".star")
 
- allStars.forEach((star, i) => {
-    star.onclick = function(){
-        let currentStarLevel = i + 1;
+allStars.forEach((star, i) => {
+  star.onclick = function () {
+    let currentStarLevel = i + 1;
 
-        allStars.forEach ((star, x) =>{
-            if (currentStarLevel >= x+1) {
-                star.classList.add("starClicked");
-            } else {
-                star.classList.remove("starClicked");
-            }
-        })
-    }
- })
+    allStars.forEach((star, x) => {
+      if (currentStarLevel >= x + 1) {
+        star.classList.add("starClicked");
+      } else {
+        star.classList.remove("starClicked");
+      }
+    })
+  }
+})

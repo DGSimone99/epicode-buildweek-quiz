@@ -65,8 +65,8 @@ ul {
     cursor: pointer;
     appearance: none;
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     border: 0.15em solid #ebebeb;
     background-color: transparent;
     position: relative;
@@ -79,9 +79,9 @@ ul {
 }
 
 .check:checked::after {
-    content: '✔';
+    content: '✓';
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #0B113B;
     position: absolute;
     top: 50%;
@@ -398,6 +398,7 @@ h2 {
     margin-bottom: 4rem;
     border: none;
     cursor: pointer;
+    transition: fill 0.3 ease;
 }
 
 #info {
@@ -427,6 +428,40 @@ h2 {
     fill: #0f1960
 }
 
+/*#starButton:hover .star:nth-child(2) {
+    transition-delay: 30ms;
+  }
+  
+  #starButton:hover .star:nth-child(3) {
+    transition-delay: 60ms;
+  }
+  
+  #starButton:hover .star:nth-child(4) {
+    transition-delay: 90ms;
+  }
+  
+  #starButton:hover .star:nth-child(5) {
+    transition-delay: 120ms;
+  }
+  #starButton:hover .star:nth-child(6) {
+    transition-delay: 150ms;
+  }
+  
+  #starButton:hover .star:nth-child(7) {
+    transition-delay: 180ms;
+  }
+  
+  #starButton:hover .star:nth-child(8) {
+    transition-delay: 210ms;
+  }
+  
+  #starButton:hover .star:nth-child(9) {
+    transition-delay: 240ms;
+  }
+  #starButton:hover .star:nth-child(10) {
+    transition-delay: 270ms;
+  }*/
+
 .starClicked {
     fill: #00FFFF;
 }
@@ -436,6 +471,8 @@ h2 {
     height: 2em;
 }
 
+
+/*Pagina extra*/
 
 #test {
     text-align: center;

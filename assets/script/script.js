@@ -112,6 +112,100 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+const questions2 = [
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "hard",
+    question: "The logo for Snapchat is a Bell.",
+    correct_answer: "False", 
+    incorrect_answers: ["True"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What does CPU stand for?",
+    correct_answer: "Central Processing Unit",
+    incorrect_answers: [
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "The C programming language was created by this American computer scientist.",
+    correct_answer: "Dennis Ritchie",
+    incorrect_answers: [
+      "Tim Berners Lee",
+      "al-Khwārizmī",
+      "Willis Ware"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What does LTS stand for in the software market?",
+    correct_answer: "Long Term Support",
+    incorrect_answers: [
+      "Long Taco Service",
+      "Ludicrous Transfer Speed",
+      "Ludicrous Turbo Speed"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    correct_answer: "Final",
+    incorrect_answers: ["Static", "Private", "Public"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What language does Node.js use?",
+    correct_answer: "JavaScript",
+    incorrect_answers: ["Java", "Java Source", "Joomla Source Code"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "The numbering system with a radix of 16 is more commonly referred to as",
+    correct_answer: "Hexadecimal",
+    incorrect_answers: ["Binary", "Duodecimal", "Octal"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What amount of bits commonly equals one byte?",
+    correct_answer: "8",
+    incorrect_answers: ["1", "2", "64"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    correct_answer: ".svg",
+    incorrect_answers: [".png", ".jpeg", ".gif"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+    correct_answer: "1000",
+    incorrect_answers: ["512", "1024", "500"]
+  }
+];
 
 if (document.location.pathname === "/quiz.html") {
 

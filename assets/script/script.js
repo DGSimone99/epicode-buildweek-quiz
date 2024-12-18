@@ -120,28 +120,36 @@ if (document.location.pathname === "/quiz.html") {
   const contatore = document.querySelector("#contatore")
 
   function caricaDomanda() {
+    
+    function circleAnimation() {
+      let circleForeground = document.querySelector(".circle-foreground");
+        circleForeground.style.animation = "none";
+        circleForeground.style.strokeDashoffset = "0";
+        setTimeout(() => {
+          circleForeground.style.animation = "countdown 60s linear forwards";
+        }, 1000);
+    }
 
-    let countdownDuration = 60;
+    let countdownDuration = 59;
     const countdownText = document.querySelector("#countdown-text");
-    const countdownCircle = document.querySelector(".circle-foreground");
-
-    countdownCircle.classList.remove("countdown");
-    void countdownCircle.offsetWidth;
-    countdownCircle.classList.add("countdown"); 
 
     let countdown = setInterval(function () {
       if (countdownDuration > 0) {
-        countdownText.textContent = countdownDuration + "s";
+        countdownText.textContent = countdownDuration;
         countdownDuration--;
       } else {
+        circleAnimation();
         countdownText.textContent = "0";
-        clearInterval(countdown);
         sbagliate++
+        localStorage.setItem("risposteSbagliate", sbagliate)
+        localStorage.setItem("risposteCorrette", corrette)
         index++
+        clearInterval(countdown);
         caricaDomanda()
       }
     }, 1000);
 
+  
     if (index >= questions.length) {
       window.location.href = "result.html";
       return;
@@ -167,12 +175,19 @@ if (document.location.pathname === "/quiz.html") {
       risposte.appendChild(li)
 
       li.addEventListener("click", () => {
+        clearInterval(countdown);
+  
+        let timerDisplay = document.querySelector("#countdown-text");
 
-        if (document.querySelector(".risposta.cliccata")) return
+        if (timerDisplay) {
+            timerDisplay.textContent = "60";
+          if (document.querySelector(".risposta.cliccata")) return
+        }
 
         li.classList.add("cliccata")
 
-        clearInterval(countdown);
+        circleAnimation()
+
         if (answer === domandaCorrente.correct_answer) {
           corrette++
           localStorage.setItem("risposteCorrette", corrette)
@@ -193,6 +208,7 @@ if (document.location.pathname === "/quiz.html") {
       )
     }
     )
+    resetAnimation()
   }
   caricaDomanda()
 };
@@ -273,7 +289,7 @@ if (document.location.pathname === "/result.html") {
       labels: ['sbagliate', 'corrette'],
       datasets: [{
         data: [sbagliate2, corrette2],
-        backgroundColor: ['#00FFFF', '#D20094'],
+        backgroundColor: ['#D20094', '#00FFFF'],
         borderWidth: 0
       }]
     },

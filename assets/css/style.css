@@ -107,14 +107,14 @@ footer {
 .circle-background {
     fill: none;
     stroke: #5e3c5ea6;
-    stroke-width: 5;
+    stroke-width: 7;
 }
 
 .circle-foreground {
     fill: none;
     stroke: #00e8ff;
-    stroke-width: 5;
-    stroke-dasharray: 283;
+    stroke-width: 7;
+    stroke-dasharray: 169.56;
     stroke-dashoffset: 0;
     animation: countdown 60s linear forwards;
 }
@@ -123,15 +123,34 @@ footer {
     animation: countdown 60s linear forwards;
   }
 
-.countdown-text {
+#countdown-second {
     position: absolute;
-    top: 50%;
+    top: 36%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-size: 2em;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-size: 0.5em;
+    font-weight: 600;
+    text-align: center;
+}
+#countdown-text {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 2.6em;
+    text-align: center;
+}
+
+#countdown-remaining {
+    position: absolute;
+    top: 60.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 0.5em;
+    font-weight: 500;
     text-align: center;
 }
 
@@ -140,7 +159,7 @@ footer {
         stroke-dashoffset: 0;
     }
     to {
-        stroke-dashoffset: 283;
+        stroke-dashoffset: 169.56;
 }}
 
 #rate {
@@ -154,7 +173,7 @@ footer {
 
 .risposta {
     display: inline-block;
-    width: 20vw;
+    width: 16vw;
     padding: 1.5em 2em;
     margin: 1em;
     background-color: rgba(45, 74, 100, 0.37);
@@ -214,19 +233,19 @@ footer {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 0;
 }
 
 .risultatoFinale>p {
     margin-top: 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .container div {
     display: inline-block;
     text-align: left;
-    padding-top: 1em;
+    padding-top: 0.6em;
 }
 
 #sbagliate,
@@ -252,7 +271,7 @@ h2 {
     height: 12em;
     margin: 1em 4em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1em;
     padding: 4em 3em 2em 3em;
 }
 

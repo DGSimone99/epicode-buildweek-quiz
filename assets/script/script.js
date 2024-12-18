@@ -123,6 +123,11 @@ if (document.location.pathname === "/quiz.html") {
 
     let countdownDuration = 60;
     const countdownText = document.querySelector("#countdown-text");
+    const countdownCircle = document.querySelector(".circle-foreground");
+
+    countdownCircle.classList.remove("countdown");
+    void countdownCircle.offsetWidth;
+    countdownCircle.classList.add("countdown"); 
 
     let countdown = setInterval(function () {
       if (countdownDuration > 0) {
@@ -308,3 +313,21 @@ if (document.location.pathname === "/review.html") {
     }
   })
 }
+
+//JS della pagina review
+
+const allStars = document.querySelectorAll(".star")
+
+ allStars.forEach((star, i) => {
+    star.onclick = function(){
+        let currentStarLevel = i + 1;
+
+        allStars.forEach ((star, x) =>{
+            if (currentStarLevel >= x+1) {
+                star.classList.add("starClicked");
+            } else {
+                star.classList.remove("starClicked");
+            }
+        })
+    }
+ })

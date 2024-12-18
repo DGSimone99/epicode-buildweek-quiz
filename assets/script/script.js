@@ -113,7 +113,27 @@ const questions = [
   },
 ];
 
+if (document.location.pathname === "/select.html") {
+  let start = document.querySelector("#startTest")
+  
+  start.addEventListener("click", () => {
+    let questions = document.querySelector("#numberQuestions")
+    let numbQuestions = questions.value;
+
+    localStorage.setItem("numQuestions", numbQuestions);
+  
+    window.location.href = "/quiz.html";
+    })
+}
+
+  
+
 if (document.location.pathname === "/quiz.html") {
+  
+  let selectedNum = localStorage.getItem("numQuestions");
+
+  let selectedQuestions = questions.slice(0, selectedNum);
+
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
@@ -150,14 +170,14 @@ if (document.location.pathname === "/quiz.html") {
     }, 1000);
 
   
-    if (index >= questions.length) {
+    if (index >= selectedQuestions.length) {
       window.location.href = "result.html";
       return;
     }
 
-    const domandaCorrente = questions[index]
+    const domandaCorrente = selectedQuestions[index]
     domanda.innerText = domandaCorrente.question
-    contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${questions.length}</span>`
+    contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${selectedQuestions.length}</span>`
 
     risposte.innerHTML = ""
 
@@ -208,7 +228,6 @@ if (document.location.pathname === "/quiz.html") {
       )
     }
     )
-    resetAnimation()
   }
   caricaDomanda()
 };

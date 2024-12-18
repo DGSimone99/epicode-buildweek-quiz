@@ -68,7 +68,6 @@ ul {
     width: 1em;
     height: 1em;
     border: 0.15em solid #ebebeb;
-    border-radius: 0.2em;
     background-color: transparent;
     position: relative;
     vertical-align: middle;
@@ -81,6 +80,7 @@ ul {
 
 .check:checked::after {
     content: '✔';
+    font-weight: bold;
     font-size: 1em;
     color: #0B113B;
     position: absolute;

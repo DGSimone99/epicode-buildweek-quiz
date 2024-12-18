@@ -3,7 +3,7 @@ if (document.location.pathname === "/index.html") {
   test.addEventListener("click", () => {
     let check = document.querySelector(".check")
     if (check.checked) {
-      window.location.href = "quiz.html"
+      window.location.href = "select.html"
     }
   })
 }
@@ -111,9 +111,121 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "hard",
+    question: "The logo for Snapchat is a Bell.",
+    correct_answer: "False", 
+    incorrect_answers: ["True"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What does CPU stand for?",
+    correct_answer: "Central Processing Unit",
+    incorrect_answers: [
+      "Central Process Unit",
+      "Computer Personal Unit",
+      "Central Processor Unit"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "The C programming language was created by this American computer scientist.",
+    correct_answer: "Dennis Ritchie",
+    incorrect_answers: [
+      "Tim Berners Lee",
+      "al-Khwārizmī",
+      "Willis Ware"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What does LTS stand for in the software market?",
+    correct_answer: "Long Term Support",
+    incorrect_answers: [
+      "Long Taco Service",
+      "Ludicrous Transfer Speed",
+      "Ludicrous Turbo Speed"
+    ]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+    correct_answer: "Final",
+    incorrect_answers: ["Static", "Private", "Public"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What language does Node.js use?",
+    correct_answer: "JavaScript",
+    incorrect_answers: ["Java", "Java Source", "Joomla Source Code"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "The numbering system with a radix of 16 is more commonly referred to as",
+    correct_answer: "Hexadecimal",
+    incorrect_answers: ["Binary", "Duodecimal", "Octal"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What amount of bits commonly equals one byte?",
+    correct_answer: "8",
+    incorrect_answers: ["1", "2", "64"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What is the most preferred image format used for logos in the Wikimedia database?",
+    correct_answer: ".svg",
+    incorrect_answers: [".png", ".jpeg", ".gif"]
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "According to the International System of Units, how many bytes are in a kilobyte of RAM?",
+    correct_answer: "1000",
+    incorrect_answers: ["512", "1024", "500"]
+  }
 ];
 
+if (document.location.pathname === "/select.html") {
+  let start = document.querySelector("#startTest")
+  
+  start.addEventListener("click", () => {
+    let questions = document.querySelector("#numberQuestions")
+    let numbQuestions = questions.value;
+
+    localStorage.setItem("numQuestions", numbQuestions);
+  
+    window.location.href = "/quiz.html";
+    })
+}
+
+  
+
 if (document.location.pathname === "/quiz.html") {
+  
+  let selectedNum = localStorage.getItem("numQuestions");
+
+  let selectedQuestions = questions.slice(0, selectedNum);
+
 
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
@@ -150,14 +262,14 @@ if (document.location.pathname === "/quiz.html") {
     }, 1000);
 
   
-    if (index >= questions.length) {
+    if (index >= selectedQuestions.length) {
       window.location.href = "result.html";
       return;
     }
 
-    const domandaCorrente = questions[index]
+    const domandaCorrente = selectedQuestions[index]
     domanda.innerText = domandaCorrente.question
-    contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${questions.length}</span>`
+    contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${selectedQuestions.length}</span>`
 
     risposte.innerHTML = ""
 
@@ -208,13 +320,15 @@ if (document.location.pathname === "/quiz.html") {
       )
     }
     )
-    resetAnimation()
   }
   caricaDomanda()
 };
 
 
 if (document.location.pathname === "/result.html") {
+  let selectedNum = localStorage.getItem("numQuestions");
+
+  let selectedQuestions = questions.slice(0, selectedNum);
   //Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")
@@ -224,12 +338,12 @@ if (document.location.pathname === "/result.html") {
 
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
-  corrette.innerText = (corrette2 / questions.length * 100) + "%"
+  corrette.innerText = (corrette2 / selectedQuestions.length * 100).toFixed(2) + "%"
   //Contatore corrette
   let contatoreGiuste = document.createElement("p")
   contatoreGiuste.className = "contatoreGiuste"
   corretteDiv.appendChild(contatoreGiuste)
-  contatoreGiuste.innerText = corrette2 + "/" + questions.length + " questions"
+  contatoreGiuste.innerText = corrette2 + "/" + selectedQuestions.length + " questions"
 
 
   //Risoste sbagliate
@@ -241,13 +355,13 @@ if (document.location.pathname === "/result.html") {
 
   sbagliateDiv.appendChild(sbagliate)
   sbagliateDiv.className = "sbagliateDiv"
-  sbagliate.innerText = (sbagliate2 / questions.length * 100) + "%"
+  sbagliate.innerText = (sbagliate2 / selectedQuestions.length * 100).toFixed(2) + "%"
 
   //Contatore sbagliate
   let contatoreSbagliate = document.createElement("p")
   contatoreSbagliate.className = "contatoreSbagliate"
   sbagliateDiv.appendChild(contatoreSbagliate)
-  contatoreSbagliate.innerText = sbagliate2 + "/" + questions.length + " questions"
+  contatoreSbagliate.innerText = sbagliate2 + "/" + selectedQuestions.length + " questions"
 
 
 
@@ -286,7 +400,7 @@ if (document.location.pathname === "/result.html") {
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['sbagliate', 'corrette'],
+      labels: ['Wrong', 'Correct'],
       datasets: [{
         data: [sbagliate2, corrette2],
         backgroundColor: ['#D20094', '#00FFFF'],

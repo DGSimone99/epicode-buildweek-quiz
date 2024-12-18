@@ -417,6 +417,16 @@ h2 {
     margin: 3rem;
 }
 
+#starButton .star:hover, #starButton .star:hover ~ .star {
+    fill: #00FFFF;
+}
+#starButton:hover .star{
+    fill: #00FFFF;
+}
+#starButton .star:hover ~ .star {
+    fill: #0f1960
+}
+
 .starClicked {
     fill: #00FFFF;
 }

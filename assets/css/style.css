@@ -101,7 +101,7 @@ footer {
     font-weight: bold;
 }
 
-/*.circle {
+.circle {
     border-radius: 50%;
     border: 10px solid lightgray;
     border-top: 10px solid #3498db;
@@ -109,7 +109,7 @@ footer {
     width: 100%;
     height: 100%;
     padding: 2em 1em;
-}*/
+}
 
 
 #rate {
@@ -222,8 +222,7 @@ h2 {
     margin: 1em 4em;
     text-align: center;
     font-size: 1.2em;
-    border: solid 2.5em #d20094;
-    border-radius: 50%;
+    padding: 4em 3em 2em 3em;
 }
 
 .infoTesto {
@@ -235,6 +234,7 @@ h2 {
 .testo {
     font-weight: bold;
 }
+
 
 .testo span {
     color: #00FFFF;
@@ -248,8 +248,14 @@ h2 {
     padding: 0.7em 3em;
     text-align: center;
     cursor: pointer;
+    margin-top: 2em;
 }
 
+#myChart {
+    display: block;
+    position: absolute;
+
+}
 
 /* Pagina 4 */
 #pagina4 main {

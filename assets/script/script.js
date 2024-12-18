@@ -115,7 +115,6 @@ const questions = [
 
 if (document.location.pathname === "/quiz.html") {
 
-
   const domanda = document.querySelector("#domanda")
   const risposte = document.querySelector(".risposte")
   const contatore = document.querySelector("#contatore")
@@ -259,5 +258,53 @@ if (document.location.pathname === "/result.html") {
   let rate = document.querySelector("#rate")
   rate.addEventListener("click", () => {
     window.location.href = "review.html"
+  }
+  )
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['sbagliate', 'corrette'],
+      datasets: [{
+        data: [sbagliate2, corrette2],
+        backgroundColor: ['#00FFFF', '#D20094'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '70%',
+      elements: {
+        center: {
+        }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+      }
+    }
+  });
+}
+
+
+// Pagina 4
+if (document.location.pathname === "/review.html") {
+  const allStars = document.querySelectorAll(".star")
+
+  allStars.forEach((star, i) => {
+    star.onclick = function () {
+      let currentStarLevel = i + 1;
+
+      allStars.forEach((star, x) => {
+        if (currentStarLevel >= x + 1) {
+          star.classList.add("starClicked");
+        } else {
+          star.classList.remove("starClicked");
+        }
+      })
+    }
   })
 }

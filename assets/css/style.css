@@ -4,7 +4,7 @@ body {
     padding: 2% 22%;
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
-
+   
 }
 
 .img {
@@ -63,7 +63,32 @@ ul {
 
 .check {
     cursor: pointer;
+    appearance: none;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 0.15em solid #ebebeb;
+    border-radius: 0.2em;
+    background-color: transparent;
+    position: relative;
+    vertical-align: middle;
 }
+
+.check:checked {
+    background-color: #00FFFF;
+    border-color: #ebebeb;
+}
+
+.check:checked::after {
+    content: '✔';
+    font-size: 1em;
+    color: #0B113B;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 .check1{
     padding: 1%;

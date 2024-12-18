@@ -1,7 +1,7 @@
 body {
     background-size: cover;
     background-image: url(../img/bg.jpg);
-    padding: 2% 15%;
+    padding: 2% 22%;
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
 
@@ -63,10 +63,11 @@ ul {
 
 .check {
     cursor: pointer;
-    /*background-color: #0B113B;
-    background-size: cover;*/
 }
 
+.check1{
+    padding: 1%;
+}
 /* PAGINA 2*/
 
 #pagina2 main,
@@ -106,7 +107,7 @@ footer {
     border: 10px solid lightgray;
     border-top: 10px solid #3498db;
     animation: countdown-animation 10s linear forwards;
-    width: 100%;
+    width: 45%;
     height: 100%;
     padding: 2em 1em;
 }

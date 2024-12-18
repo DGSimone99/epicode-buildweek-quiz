@@ -3,7 +3,7 @@ if (document.location.pathname === "/index.html") {
   test.addEventListener("click", () => {
     let check = document.querySelector(".check")
     if (check.checked) {
-      window.location.href = "quiz.html"
+      window.location.href = "select.html"
     }
   })
 }
@@ -111,8 +111,6 @@ const questions = [
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
-];
-const questions2 = [
   {
     category: "Science: Computers",
     type: "boolean",
@@ -328,6 +326,9 @@ if (document.location.pathname === "/quiz.html") {
 
 
 if (document.location.pathname === "/result.html") {
+  let selectedNum = localStorage.getItem("numQuestions");
+
+  let selectedQuestions = questions.slice(0, selectedNum);
   //Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")
@@ -337,12 +338,12 @@ if (document.location.pathname === "/result.html") {
 
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
-  corrette.innerText = (corrette2 / questions.length * 100) + "%"
+  corrette.innerText = (corrette2 / selectedQuestions.length * 100).toFixed(2) + "%"
   //Contatore corrette
   let contatoreGiuste = document.createElement("p")
   contatoreGiuste.className = "contatoreGiuste"
   corretteDiv.appendChild(contatoreGiuste)
-  contatoreGiuste.innerText = corrette2 + "/" + questions.length + " questions"
+  contatoreGiuste.innerText = corrette2 + "/" + selectedQuestions.length + " questions"
 
 
   //Risoste sbagliate
@@ -354,13 +355,13 @@ if (document.location.pathname === "/result.html") {
 
   sbagliateDiv.appendChild(sbagliate)
   sbagliateDiv.className = "sbagliateDiv"
-  sbagliate.innerText = (sbagliate2 / questions.length * 100) + "%"
+  sbagliate.innerText = (sbagliate2 / selectedQuestions.length * 100).toFixed(2) + "%"
 
   //Contatore sbagliate
   let contatoreSbagliate = document.createElement("p")
   contatoreSbagliate.className = "contatoreSbagliate"
   sbagliateDiv.appendChild(contatoreSbagliate)
-  contatoreSbagliate.innerText = sbagliate2 + "/" + questions.length + " questions"
+  contatoreSbagliate.innerText = sbagliate2 + "/" + selectedQuestions.length + " questions"
 
 
 
@@ -399,7 +400,7 @@ if (document.location.pathname === "/result.html") {
   new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['sbagliate', 'corrette'],
+      labels: ['Wrong', 'Correct'],
       datasets: [{
         data: [sbagliate2, corrette2],
         backgroundColor: ['#D20094', '#00FFFF'],

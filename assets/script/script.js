@@ -124,6 +124,11 @@ if (document.location.pathname === "/quiz.html") {
 
     let countdownDuration = 60;
     const countdownText = document.querySelector("#countdown-text");
+    const countdownCircle = document.querySelector(".circle-foreground");
+
+    countdownCircle.classList.remove("countdown");
+    void countdownCircle.offsetWidth;
+    countdownCircle.classList.add("countdown"); 
 
     let countdown = setInterval(function () {
       if (countdownDuration > 0) {

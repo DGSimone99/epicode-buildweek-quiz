@@ -88,30 +88,60 @@ footer {
 }
 
 .countdown-container {
-    display: inline-block;
-    float: right;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.countdown {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.circle-svg {
+    transform: rotate(-90deg);
+}
+
+.circle-background {
+    fill: none;
+    stroke: #5e3c5ea6;
+    stroke-width: 5;
+}
+
+.circle-foreground {
+    fill: none;
+    stroke: #00e8ff;
+    stroke-width: 5;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    animation: countdown 60s linear forwards;
+}
+
+.circle-foreground.countdown {
+    animation: countdown 60s linear forwards;
+  }
+
+.countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-.countdown-text {
-    border: 10px solid #ebebeb;
-    border-radius: 50%;
-    padding: 1.2em;
-    width: 1.5em;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.circle {
-    border-radius: 50%;
-    border: 10px solid lightgray;
-    border-top: 10px solid #3498db;
-    animation: countdown-animation 10s linear forwards;
-    width: 45%;
-    height: 100%;
-    padding: 2em 1em;
-}
-
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 283;
+}}
 
 #rate {
     background: none;

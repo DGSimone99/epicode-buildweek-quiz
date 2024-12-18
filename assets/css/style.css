@@ -4,7 +4,7 @@ body {
     padding: 2% 22%;
     font-family: "Outfit", sans-serif;
     color: #ebebeb;
-   
+
 }
 
 .img {
@@ -90,16 +90,20 @@ ul {
 }
 
 
-.check1{
+.check1 {
     padding: 1%;
 }
+
 #rate:hover {
     color: #0B113B;
     background-color: #00FFFF;
     box-shadow: 2px -1px 39px -5px #00FFFF;
 }
-#rate:active, #nextPage:active, #info:active {
-    background-color: #029b9b; 
+
+#rate:active,
+#nextPage:active,
+#info:active {
+    background-color: #029b9b;
 }
 
 /* PAGINA 2*/
@@ -155,7 +159,7 @@ footer {
 
 .circle-foreground.countdown {
     animation: countdown 60s linear forwards;
-  }
+}
 
 #countdown-second {
     position: absolute;
@@ -193,9 +197,11 @@ footer {
     from {
         stroke-dashoffset: 0;
     }
+
     to {
-        stroke-dashoffset: 169.56;
-}}
+        stroke-dashoffset: -169.56;
+    }
+}
 
 #rate {
     background: none;
@@ -418,4 +424,56 @@ h2 {
 #starButton .star {
     width: 2em;
     height: 2em;
+}
+
+
+#test {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+select {
+    font-size: 0.6em;
+    border: solid 0.06em #ebebeb;
+    padding: 0.2em 1.5em;
+    font-weight: bold;
+    color: #ebebeb;
+    background-color: transparent;
+}
+
+option {
+    background-color: #0B113B;
+}
+
+.select::after {
+    background-color: red;
+}
+
+#pagina15 input {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ebebeb;
+    font-weight: bold;
+    background-color: transparent;
+    border: solid 0.06em #ebebeb;
+}
+
+#startTest {
+    text-align: center;
+    font-size: 2rem;
+    color: #0B113B;
+    background-color: #00FFFF;
+    box-shadow: 2px -1px 39px -5px #00FFFF;
+    border: none;
+    font-weight: bold;
+    padding: 1em 3em;
+    cursor: pointer;
+    margin-top: 2em;
+}
+
+.label {
+    display: block;
+    margin-top: 1em;
 }

@@ -217,6 +217,9 @@ footer {
     font-weight: bold;
     font-size: 1em;
     cursor: pointer;
+
+    /*ombra*/
+    box-shadow: 0px -2.5px 0.5px #ebebeb;
 }
 
 .risposta:hover {

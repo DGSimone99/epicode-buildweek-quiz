@@ -13,7 +13,8 @@ let corrette = 0
 let sbagliate = 0
 let totale = 0
 
-const questions = [
+
+let questions = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -110,7 +111,10 @@ const questions = [
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
-  },
+  }
+]
+
+let questions2 = [
   {
     category: "Science: Computers",
     type: "boolean",
@@ -211,20 +215,41 @@ if (document.location.pathname === "/select.html") {
   start.addEventListener("click", () => {
     let questions = document.querySelector("#numberQuestions")
     let numbQuestions = questions.value;
-
+    
     localStorage.setItem("numQuestions", numbQuestions);
-  
-    window.location.href = "/quiz.html";
-    })
+
+    let difficulty = document.querySelector("#difficulty")
+    let selectedQuestions = []
+
+    let difficultyN = 0
+
+    let selectedValue = difficulty.value
+
+    if (selectedValue === "easy") {
+        difficultyN = 0
+      } else {
+        difficultyN = 1
+      }  
+    localStorage.setItem("difficulty", difficultyN)
+
+    window.location.href = "/quiz.html"}
+)
 }
+
 
   
 
 if (document.location.pathname === "/quiz.html") {
+
+
+  let difficulty = localStorage.getItem("difficulty")
+
+  if (difficulty !== 0) {
+    questions = questions2
+  }
   
   let selectedNum = localStorage.getItem("numQuestions");
-
-  let selectedQuestions = questions.slice(0, selectedNum);
+  let selectedQuestions = questions.slice(0, selectedNum)
 
 
   const domanda = document.querySelector("#domanda")

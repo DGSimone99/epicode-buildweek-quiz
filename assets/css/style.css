@@ -102,7 +102,8 @@ ul {
 
 #rate:active,
 #nextPage:active,
-#info:active {
+#info:active,
+#startTest:active {
     background-color: #029b9b;
 }
 

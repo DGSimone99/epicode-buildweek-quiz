@@ -467,21 +467,24 @@ if (document.location.pathname === "/review.html") {
     }
   })
 }
+document.addEventListener('DOMContentLoaded', function() {
+  const stars = document.querySelectorAll('#starButton .star');
 
-//JS della pagina review
+  stars.forEach((star, index) => {
+    star.addEventListener('mouseover', function() {
+      stars.forEach((s, i) => {
+        if (i <= index) {
+          s.classList.add('hovered');
+        } else {
+          s.classList.remove('hovered');
+        }
+      });
+    });
 
-let allStars = document.querySelectorAll(".star")
-
-allStars.forEach((star, i) => {
-  star.onclick = function () {
-    let currentStarLevel = i + 1;
-
-    allStars.forEach((star, x) => {
-      if (currentStarLevel >= x + 1) {
-        star.classList.add("starClicked");
-      } else {
-        star.classList.remove("starClicked");
-      }
-    })
-  }
-})
+    star.addEventListener('mouseout', function() {
+      stars.forEach((s) => {
+        s.classList.remove('hovered');
+      });
+    });
+  });
+});

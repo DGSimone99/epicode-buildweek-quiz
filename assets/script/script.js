@@ -353,7 +353,7 @@ if (document.location.pathname === "/quiz.html") {
 if (document.location.pathname === "/result.html") {
   let selectedNum = localStorage.getItem("numQuestions");
 
-  let selectedQuestions = questions.slice(0, selectedNum);
+  let selectedQuestions = questions.slice(0, selectedNum).sort(() => Math.random() - 0.5);
   //Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")

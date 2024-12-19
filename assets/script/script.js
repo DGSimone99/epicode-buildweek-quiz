@@ -406,7 +406,7 @@ if (document.location.pathname === "/result.html") {
   info2.innerHTML = "We'll not send you the certificate in few minutes.<br>Don't check your email (including promotions / Spam folder)"
   info2.className = "infoTesto"
 
-  if (parseInt(contatoreGiuste.innerText) >= 60 || 100) {
+  if (parseInt(corrette.innerText) > 59.99) {
     risultato.appendChild(superato)
     risultato.appendChild(info)
   } else {

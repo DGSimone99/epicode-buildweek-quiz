@@ -453,10 +453,19 @@ if (document.location.pathname === "/result.html") {
 // Pagina 4
 if (document.location.pathname === "/review.html") {
   let allStars = document.querySelectorAll(".star")
+  const feedBack = document.querySelector("#info")
 
   allStars.forEach((star, i) => {
     star.onclick = function () {
       let currentStarLevel = i + 1;
+
+    feedBack.addEventListener("click", function() {
+      if (currentStarLevel >= 6) {
+        alert("Grazie del tuo feedback!")
+      } else {
+        alert("Ci dispiace che non ti sei trovato bene con Epicode");
+      }
+      })
 
       allStars.forEach((star, x) => {
         if (currentStarLevel >= x + 1) {
@@ -489,3 +498,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+

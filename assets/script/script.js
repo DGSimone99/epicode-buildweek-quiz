@@ -9,6 +9,9 @@ if (document.location.pathname === "/index.html") {
 }
 
 let index = 0
+let corrette = 0
+let sbagliate = 0
+let totale = 0
 
 
 let questions = [
@@ -236,7 +239,8 @@ if (document.location.pathname === "/select.html") {
 
 
 if (document.location.pathname === "/quiz.html") {
- 
+
+
   let difficulty = localStorage.getItem("difficulty")
 
   if (difficulty > 0) {
@@ -308,10 +312,6 @@ if (document.location.pathname === "/quiz.html") {
 
       li.addEventListener("click", () => {
         clearInterval(countdown);
-         
-      let corrette;
-      let sbagliate;
-
 
         let timerDisplay = document.querySelector("#countdown-text");
 
@@ -326,11 +326,9 @@ if (document.location.pathname === "/quiz.html") {
 
         if (answer === domandaCorrente.correct_answer) {
           corrette++
-          localStorage.setItem("risposteCorrette", corrette)
           li.classList.add("corretta")
         } else {
           sbagliate++
-          localStorage.setItem("risposteSbagliate", sbagliate)
           li.classList.add("sbagliata")
         }
         document.querySelectorAll(".risposta").forEach((item) => {
@@ -340,12 +338,14 @@ if (document.location.pathname === "/quiz.html") {
           index++
           caricaDomanda();
         }, 1000)
-        console.log(corrette, sbagliate)
+        localStorage.setItem("risposteCorrette", corrette)
+        localStorage.setItem("risposteSbagliate", sbagliate)
       }
       )
     }
     )
   }
+
   caricaDomanda()
 };
 
@@ -359,7 +359,7 @@ if (document.location.pathname === "/result.html") {
   let corrette = document.createElement("p")
   corrette.className = "corretteP"
 
-  let corrette2 = parseInt(localStorage.getItem("risposteCorrette")) || 0
+  let corrette2 = parseInt(localStorage.getItem("risposteCorrette"))
 
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
@@ -376,7 +376,7 @@ if (document.location.pathname === "/result.html") {
   let sbagliate = document.createElement("p")
   sbagliate.className = "sbagliateP"
 
-  let sbagliate2 = parseInt(localStorage.getItem("risposteSbagliate")) || 0
+  let sbagliate2 = parseInt(localStorage.getItem("risposteSbagliate"))
 
   sbagliateDiv.appendChild(sbagliate)
   sbagliateDiv.className = "sbagliateDiv"

@@ -268,7 +268,7 @@ if (document.location.pathname === "/quiz.html") {
     }
 
     let countdownDuration = 59;
-    const countdownText = document.querySelector("#countdown-text");
+    let countdownText = document.querySelector("#countdown-text");
 
     let countdown = setInterval(function () {
       if (countdownDuration > 0) {
@@ -292,13 +292,13 @@ if (document.location.pathname === "/quiz.html") {
       return;
     }
 
-    const domandaCorrente = selectedQuestions[index]
+    let domandaCorrente = selectedQuestions[index]
     domanda.innerText = domandaCorrente.question
     contatore.innerHTML = `Question ${index + 1} <span class="totDomande">/ ${selectedQuestions.length}</span>`
 
     risposte.innerHTML = ""
 
-    const allAnswers = [
+    let allAnswers = [
       domandaCorrente.correct_answer,
       ...domandaCorrente.incorrect_answers,
     ];
@@ -306,7 +306,7 @@ if (document.location.pathname === "/quiz.html") {
     allAnswers.sort(() => Math.random() - 0.5)
 
     allAnswers.forEach((answer) => {
-      const li = document.createElement("li")
+      let li = document.createElement("li")
       li.className = "risposta"
       li.textContent = answer
       risposte.appendChild(li)
@@ -420,22 +420,22 @@ if (document.location.pathname === "/result.html") {
     window.location.href = "review.html"
   }
   )
-  const ctx = document.getElementById('myChart');
+  let ctx = document.querySelector("#myChart");
 
   new Chart(ctx, {
-    type: 'doughnut',
+    type: "doughnut",
     data: {
-      labels: ['Wrong', 'Correct'],
+      labels: ["Wrong", "Correct"],
       datasets: [{
         data: [sbagliate2, corrette2],
-        backgroundColor: ['#D20094', '#00FFFF'],
+        backgroundColor: ["#D20094", "#00FFFF"],
         borderWidth: 0
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '70%',
+      cutout: "70%",
       elements: {
         center: {
         }
@@ -452,7 +452,7 @@ if (document.location.pathname === "/result.html") {
 
 // Pagina 4
 if (document.location.pathname === "/review.html") {
-  const allStars = document.querySelectorAll(".star")
+  let allStars = document.querySelectorAll(".star")
 
   allStars.forEach((star, i) => {
     star.onclick = function () {
@@ -471,7 +471,7 @@ if (document.location.pathname === "/review.html") {
 
 //JS della pagina review
 
-const allStars = document.querySelectorAll(".star")
+let allStars = document.querySelectorAll(".star")
 
 allStars.forEach((star, i) => {
   star.onclick = function () {

@@ -224,11 +224,10 @@ if (document.location.pathname === "/select.html") {
 
     let selectedValue = difficulty.value
 
-    if (selectedValue === "easy") {
-      difficultyN = 0
-    } else {
-      difficultyN = 1
+    if (selectedValue !== "easy") {
+      difficultyN++
     }
+   
     localStorage.setItem("difficulty", difficultyN)
 
     window.location.href = "/quiz.html"
@@ -244,12 +243,12 @@ if (document.location.pathname === "/quiz.html") {
 
   let difficulty = localStorage.getItem("difficulty")
 
-  if (difficulty !== 0) {
+  if (difficulty > 0) {
     questions = questions2
   }
 
   let selectedNum = localStorage.getItem("numQuestions");
-  let selectedQuestions = questions.slice(0, selectedNum)
+  let selectedQuestions = questions.sort(() => Math.random() - 0.5).slice(0, selectedNum);
 
 
   const domanda = document.querySelector("#domanda")
@@ -353,7 +352,7 @@ if (document.location.pathname === "/quiz.html") {
 if (document.location.pathname === "/result.html") {
   let selectedNum = localStorage.getItem("numQuestions");
 
-  let selectedQuestions = questions.slice(0, selectedNum).sort(() => Math.random() - 0.5);
+  let selectedQuestions = questions.slice(0, selectedNum);
   //Risoste corrette
   let corretteDiv = document.querySelector("#corrette")
   let corrette = document.createElement("p")

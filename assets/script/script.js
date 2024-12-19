@@ -465,7 +465,7 @@ if (document.location.pathname === "/review.html") {
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('custom-alert').style.display = 'block';
       } else {
-        document.querySelector('.alert-message').innerText = "Ci dispiace che non ti sei trovato bene con Epicode";
+        document.querySelector('.alert-message').innerText = "Ci dispiace che non ti sei trovato bene con Epicode.";
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('custom-alert').style.display = 'block';
       }

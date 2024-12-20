@@ -461,11 +461,11 @@ if (document.location.pathname === "/review.html") {
 
     feedBack.addEventListener("click", function() {
       if (currentStarLevel >= 6) {
-        document.querySelector('.alert-message').innerText = "Grazie del tuo feedback!";
+        document.querySelector('.alert-message').innerText = "Thanks for your feedback!";
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('custom-alert').style.display = 'block';
       } else {
-        document.querySelector('.alert-message').innerText = "Ci dispiace che non ti sei trovato bene con Epicode.";
+        document.querySelector('.alert-message').innerText = "We’re sorry to hear that you didn’t have a good experience with Epicode.";
         document.getElementById('overlay').style.display = 'block';
         document.getElementById('custom-alert').style.display = 'block';
       }

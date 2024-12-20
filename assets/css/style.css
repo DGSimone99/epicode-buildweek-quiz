@@ -80,11 +80,11 @@ ul {
 
 .check:checked::after {
     content: '✓';
-    font-weight: bold;
+    font-weight: 900;
     font-size: 1.5em;
     color: #0B113B;
     position: absolute;
-    top: 50%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

@@ -352,6 +352,7 @@ if (document.location.pathname === "/quiz.html") {
   caricaDomanda()
 };
 
+
 //Pagina Result
 if (document.location.pathname === "/result.html") {
   let selectedNum = localStorage.getItem("numQuestions");

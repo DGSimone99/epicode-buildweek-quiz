@@ -435,6 +435,7 @@ h2 {
 #info:disabled {
     background-color: #ff64fc;
     color: white;
+    box-shadow: 2px -1px 39px -5px #dd7bdb;
 }
 
 #custom-alert, #custom-alert1 {

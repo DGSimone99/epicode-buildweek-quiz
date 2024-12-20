@@ -1,3 +1,4 @@
+//Pagina Index
 if (document.location.pathname === "/index.html") {
   let test = document.querySelector("#nextPage")
   test.addEventListener("click", () => {
@@ -11,9 +12,8 @@ if (document.location.pathname === "/index.html") {
 let index = 0
 let corrette = 0
 let sbagliate = 0
-let totale = 0
 
-
+//Questions
 let questions = [
   {
     category: "Science: Computers",
@@ -113,7 +113,6 @@ let questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   }
 ]
-
 let questions2 = [
   {
     category: "Science: Computers",
@@ -209,6 +208,7 @@ let questions2 = [
   }
 ];
 
+//Pagina Select
 if (document.location.pathname === "/select.html") {
   let start = document.querySelector("#startTest")
 
@@ -227,7 +227,7 @@ if (document.location.pathname === "/select.html") {
     if (selectedValue !== "easy") {
       difficultyN++
     }
-   
+
     localStorage.setItem("difficulty", difficultyN)
 
     window.location.href = "/quiz.html"
@@ -236,8 +236,7 @@ if (document.location.pathname === "/select.html") {
 }
 
 
-
-
+//Pagina Quiz
 if (document.location.pathname === "/quiz.html") {
 
 
@@ -349,7 +348,7 @@ if (document.location.pathname === "/quiz.html") {
   caricaDomanda()
 };
 
-
+//Pagina Result
 if (document.location.pathname === "/result.html") {
   let selectedNum = localStorage.getItem("numQuestions");
 
@@ -450,7 +449,7 @@ if (document.location.pathname === "/result.html") {
 }
 
 
-// Pagina 4
+// Pagina Review
 if (document.location.pathname === "/review.html") {
   let allStars = document.querySelectorAll(".star")
   const feedBack = document.querySelector("#info")
@@ -459,16 +458,16 @@ if (document.location.pathname === "/review.html") {
     star.onclick = function () {
       let currentStarLevel = i + 1;
 
-    feedBack.addEventListener("click", function() {
-      if (currentStarLevel >= 6) {
-        document.querySelector(".alert-message").innerText = "Thanks for your feedback!";
-        document.querySelector("#overlay").style.display = "block";
-        document.querySelector("#custom-alert").style.display = "block";
-      } else {
-        document.querySelector(".alert-message").innerText = "We’re sorry to hear that you didn’t have a good experience with Epicode.";
-        document.querySelector("#overlay").style.display = "block";
-        document.querySelector("#custom-alert").style.display = "block";
-      }
+      feedBack.addEventListener("click", function () {
+        if (currentStarLevel >= 6) {
+          document.querySelector(".alert-message").innerText = "Thanks for your feedback!";
+          document.querySelector("#overlay").style.display = "block";
+          document.querySelector("#custom-alert").style.display = "block";
+        } else {
+          document.querySelector(".alert-message").innerText = "We’re sorry to hear that you didn’t have a good experience with Epicode.";
+          document.querySelector("#overlay").style.display = "block";
+          document.querySelector("#custom-alert").style.display = "block";
+        }
       })
       function closeAlert() {
         document.querySelector("#overlay").style.display = "none";
@@ -484,33 +483,31 @@ if (document.location.pathname === "/review.html") {
     }
   })
 
-let info = document.querySelector("#info");
-let star = document.querySelector("#starButton");
-star.addEventListener("click", function() {
-  info.disabled = false;
-})
-}
+  let info = document.querySelector("#info");
+  let star = document.querySelector("#starButton");
+  star.addEventListener("click", function () {
+    info.disabled = false;
+  })
 
-document.addEventListener('DOMContentLoaded', function() {
-  const stars = document.querySelectorAll('#starButton .star');
+  document.addEventListener('DOMContentLoaded', function () {
+    const stars = document.querySelectorAll('#starButton .star');
 
-  stars.forEach((star, index) => {
-    star.addEventListener('mouseover', function() {
-      stars.forEach((s, i) => {
-        if (i <= index) {
-          s.classList.add('hovered');
-        } else {
-          s.classList.remove('hovered');
-        }
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', function () {
+        stars.forEach((s, i) => {
+          if (i <= index) {
+            s.classList.add('hovered');
+          } else {
+            s.classList.remove('hovered');
+          }
+        });
       });
-    });
 
-    star.addEventListener('mouseout', function() {
-      stars.forEach((s) => {
-        s.classList.remove('hovered');
+      star.addEventListener('mouseout', function () {
+        stars.forEach((s) => {
+          s.classList.remove('hovered');
+        });
       });
     });
   });
-});
-
-
+}

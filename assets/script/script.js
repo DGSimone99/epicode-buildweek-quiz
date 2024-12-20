@@ -5,6 +5,10 @@ if (document.location.pathname === "/index.html") {
     let check = document.querySelector(".check")
     if (check.checked) {
       window.location.href = "select.html"
+    } else {
+      document.querySelector(".alert-message").innerText = "Please check the box to proceed.";
+      document.querySelector("#overlay").style.display = "block";
+      document.querySelector("#custom-alert").style.display = "block";
     }
   })
 }
@@ -362,7 +366,11 @@ if (document.location.pathname === "/result.html") {
 
   corretteDiv.appendChild(corrette)
   corretteDiv.className = "corretteDiv"
-  corrette.innerText = (corrette2 / selectedQuestions.length * 100).toFixed(2) + "%"
+  if (((corrette2 / selectedQuestions.length * 100)) === 100) {
+    corrette.innerText = (corrette2 / selectedQuestions.length * 100) + "%"
+  } else {
+    corrette.innerText = (corrette2 / selectedQuestions.length * 100).toFixed(1) + "%"
+  }
   //Contatore corrette
   let contatoreGiuste = document.createElement("p")
   contatoreGiuste.className = "contatoreGiuste"
@@ -379,7 +387,11 @@ if (document.location.pathname === "/result.html") {
 
   sbagliateDiv.appendChild(sbagliate)
   sbagliateDiv.className = "sbagliateDiv"
-  sbagliate.innerText = (sbagliate2 / selectedQuestions.length * 100).toFixed(2) + "%"
+  if (((sbagliate2 / selectedQuestions.length * 100) === 100)) {
+    sbagliate.innerText = (sbagliate2 / selectedQuestions.length * 100) + "%"
+  } else {
+    sbagliate.innerText = (sbagliate2 / selectedQuestions.length * 100).toFixed(1) + "%"
+  }
 
   //Contatore sbagliate
   let contatoreSbagliate = document.createElement("p")

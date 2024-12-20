@@ -462,17 +462,17 @@ if (document.location.pathname === "/review.html") {
     feedBack.addEventListener("click", function() {
       if (currentStarLevel >= 6) {
         document.querySelector('.alert-message').innerText = "Grazie del tuo feedback!";
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('custom-alert').style.display = 'block';
+        document.querySelector("#overlay").style.display = 'block';
+        document.querySelector("#custom-alert").style.display = 'block';
       } else {
-        document.querySelector('.alert-message').innerText = "Ci dispiace che non ti sei trovato bene con Epicode.";
-        document.getElementById('overlay').style.display = 'block';
-        document.getElementById('custom-alert').style.display = 'block';
+        document.querySelector(".alert-message").innerText = "Ci dispiace che non ti sei trovato bene con Epicode.";
+        document.querySelector("#overlay").style.display = 'block';
+        document.querySelector("#custom-alert").style.display = 'block';
       }
       })
       function closeAlert() {
-        document.getElementById('overlay').style.display = 'none';
-        document.getElementById('custom-alert').style.display = 'none';
+        document.querySelector("#overlay").style.display = 'none';
+        document.querySelector("#custom-alert").style.display = 'none';
       }
       allStars.forEach((star, x) => {
         if (currentStarLevel >= x + 1) {
@@ -483,12 +483,13 @@ if (document.location.pathname === "/review.html") {
       })
     }
   })
-}
+
 let info = document.querySelector("#info");
 let star = document.querySelector("#starButton");
 star.addEventListener("click", function() {
   info.disabled = false;
 })
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   const stars = document.querySelectorAll('#starButton .star');

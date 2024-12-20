@@ -437,7 +437,7 @@ h2 {
     color: white;
 }
 
-#custom-alert {
+#custom-alert, #custom-alert1 {
     display: none;
     position: fixed;
     top: 50%;
@@ -453,20 +453,20 @@ h2 {
     z-index: 9999;
 }
 
-#custom-alert .alert-title {
+#custom-alert .alert-title, #custom-alert1 .alert-title {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: white;
     font-weight: bolder;
 }
 
-#custom-alert .alert-message {
+#custom-alert .alert-message, #custom-alert1 .alert-message1 {
     margin-bottom: 20px;
     color: white;
     font-weight: bold;
 }
 
-#custom-alert button {
+#custom-alert button, #custom-alert1 button {
     padding: 10px 20px;
     background-color: #00FFFF;
     color: black;
@@ -477,7 +477,7 @@ h2 {
     font-weight: bold;
 }
 
-#custom-alert button:hover {
+#custom-alert button:hover, #custom-alert1 button:hover {
     background-color: #06abab;
 }
 

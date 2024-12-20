@@ -472,7 +472,7 @@ if (document.location.pathname === "/review.html") {
       let currentStarLevel = i + 1;
 
       feedBack.addEventListener("click", function () {
-        if (currentStarLevel >= 6) {
+        if (currentStarLevel >= 5) {
           document.querySelector(".alert-message").innerText = "Thanks for your feedback!";
           document.querySelector("#overlay").style.display = "block";
           document.querySelector("#custom-alert").style.display = "block";
@@ -482,10 +482,7 @@ if (document.location.pathname === "/review.html") {
           document.querySelector("#custom-alert").style.display = "block";
         }
       })
-      function closeAlert() {
-        document.querySelector("#overlay").style.display = "none";
-        document.querySelector("#custom-alert").style.display = "none";
-      }
+
       allStars.forEach((star, x) => {
         if (currentStarLevel >= x + 1) {
           star.classList.add("starClicked");
@@ -498,6 +495,21 @@ if (document.location.pathname === "/review.html") {
 
   let info = document.querySelector("#info");
   let star = document.querySelector("#starButton");
+  
+  info.addEventListener("mouseover", function() {
+    if (info.disabled) {
+      document.querySelector(".alert-message1").innerText = "Do not forget to rate us. :(";
+    document.querySelector("#overlay").style.display = "block";
+    document.querySelector("#custom-alert1").style.display = "block";
+    }
+  })
+
+  function closeAlert() {
+    document.querySelector("#overlay").style.display = "none";
+    document.querySelector("#custom-alert").style.display = "none";
+    document.querySelector("#custom-alert1").style.display = "none";
+    
+  }
   star.addEventListener("click", function () {
     info.disabled = false;
   })

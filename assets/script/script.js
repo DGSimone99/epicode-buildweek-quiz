@@ -461,18 +461,18 @@ if (document.location.pathname === "/review.html") {
 
     feedBack.addEventListener("click", function() {
       if (currentStarLevel >= 6) {
-        document.querySelector('.alert-message').innerText = "Grazie del tuo feedback!";
-        document.querySelector("#overlay").style.display = 'block';
-        document.querySelector("#custom-alert").style.display = 'block';
+        document.querySelector(".alert-message").innerText = "Thanks for your feedback!";
+        document.querySelector("#overlay").style.display = "block";
+        document.querySelector("#custom-alert").style.display = "block";
       } else {
-        document.querySelector(".alert-message").innerText = "Ci dispiace che non ti sei trovato bene con Epicode.";
-        document.querySelector("#overlay").style.display = 'block';
-        document.querySelector("#custom-alert").style.display = 'block';
+        document.querySelector(".alert-message").innerText = "We’re sorry to hear that you didn’t have a good experience with Epicode.";
+        document.querySelector("#overlay").style.display = "block";
+        document.querySelector("#custom-alert").style.display = "block";
       }
       })
       function closeAlert() {
-        document.querySelector("#overlay").style.display = 'none';
-        document.querySelector("#custom-alert").style.display = 'none';
+        document.querySelector("#overlay").style.display = "none";
+        document.querySelector("#custom-alert").style.display = "none";
       }
       allStars.forEach((star, x) => {
         if (currentStarLevel >= x + 1) {
